@@ -2,7 +2,7 @@
 """
 Created on Fri Sep  9 18:32:26 2022
 
-@author: maggi
+
 """
 
 
@@ -28,7 +28,7 @@ from dash import dash, dcc, html,dash_table, Output, Input, ctx
 import plotly.graph_objs as go
 import pandas as pd
 import numpy as np
-
+import os
 from dash_table.Format import Format, Group, Scheme
 import dash_table.FormatTemplate as FormatTemplate
 from datetime import datetime as dt
@@ -270,6 +270,10 @@ Der
 
 
 
+api_key = os.getenv('api_key')
+organizationId = os.getenv('organizationId')
+
+deviceId = os.getenv('deviceId')
 
 #How to authenticate to a rest API 
 headers = {'Accept': 'application/json', "Api-Key" : api_key}
