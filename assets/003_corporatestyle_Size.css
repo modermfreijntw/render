@@ -1,0 +1,448 @@
+
+/* CSS Document */
+
+/* Table of contents
+––––––––––––––––––––––––––––––––––––––––––––––––––
+- Html
+- Body
+- Dash Date Picker
+- Dash Dropdown
+- Dash Table
+- Img
+- Typography
+*/
+
+/* Html
+––––––––––––––––––––––––––––––––––––––––––––––––––*/
+html {
+  /*font-family: Roboto ;/* !important;*/ /*, Fallback, sans-serif !important  */
+  font-family: "Open Sans", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif; 
+  /*font-family: 'Roboto Condensed', sans-serif !important;*/
+  background: rgb(251, 251, 252));
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  width: 100% !important;
+  min-height: 100% !important;
+  min-width: 100% !important;
+  overflow-x: visible !important;
+  font-size: 62.5% !important;
+}
+
+/* Body
+––––––––––––––––––––––––––––––––––––––––––––––––––*/
+body {
+  /*font-family: 'Roboto Condensed', sans-serif !important; */
+  font-family: "Open Sans", "HelveticaNeue", "Helvetica Neue", "Roboto", Helvetica, Arial, sans-serif, sans-serif !important;
+  /*font-family: Roboto;/* !important;*/
+  background-color: transparent; /* By default the body color is white, making any transparent component, actually white!*/
+}
+
+/* Dash Date Picker
+https://github.com/plotly/dash-core-components/blob/557d2fd4987c437265d220f71ee69c2d0616526c/dash_core_components/react-dates%4012.3.0.css
+––––––––––––––––––––––––––––––––––––––––––––––––––/* 
+.DateInput_input, .DateInput_input_1 {
+   color: inherit !important;
+   text-align: center;
+   font-size: inherit ! important;
+   Height: 25px !important;
+   Width: 100% !important;
+   padding-left: 3px !important;
+   padding-right: 3px !important;
+}
+
+
+/*Checklist 
+
+*/
+
+
+/*Checklist 
+flex makes it so that all in one row /line
+*/ 
+/*
+.my_box_container {
+  display: inline-block !important;
+  column-count: 2;
+
+}
+*/
+/*
+#my_box_container li { 
+  border: 1px transparent solid !important; 
+  display:inline-block !important;
+  width:12em !important;
+}
+*/
+/*
+.my_box_container li{
+
+ -webkit-column-count: 2 !important;
+ -moz-column-count: 2 !important;
+ -o-column-count: 2 !important;
+  column-count: 2 !important; 
+} 
+*/
+
+
+/*Checklist 
+say that cursor is gonna be a pointer
+so if mouse over the checkbox becomes a hand
+*/
+/*
+.my_box_input {
+  cursor: pointer!important;
+}
+*/
+/*Checklist 
+puts a box around each value, with bg color
+border radius rounds the edges
+*/
+/*
+.my_box_label {
+  background: #A5D6A7 !important;
+  padding: 0.5rem 1rem !important;
+  border-radius: 0.5rem !important;
+}
+
+*/
+
+/* Dash Dropdown
+TRY MAKE BG WHITE  #FBFBF
+for options list not the dropdpwn itself
+input box ganze also mit the value aber au wissi box rundume
+––––––––––––––––––––––––––––––––––––––––––––––––––*/
+/*
+.dropdown {
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 5px;
+}
+.dropdown .Select-control{
+  background-color: white;
+}
+.dropdown .Select-menu-outer{
+  background-color: white;
+}
+.dropdown .Select-value{
+  background-color: #3BA27A;
+  color: white;
+  font-size: 14px;  
+}
+.dropdown .VirtualizedSelectFocusedOption {
+  background-color: #a5ecd1;
+  color: black;
+}
+.dropdown .VirtualizedSelectOption  {
+  font-size: 14px;
+}
+*/
+
+/* macht grösseri Box wiss   
+*/
+/*
+.dropdown .Select-control{
+  background-color: white;
+}
+*/
+/*
+.dropdown .Select-menu-outer{
+  background-color: white;
+}
+.dropdown .Select-value{
+  background-color: #3BA27A;
+  color: white;
+  font-size: 14px;  
+}
+
+*/
+/*
+.Select, .Select div, .Select input,.Select span { 
+background: #fff !important;  /*  #fff is white to change the background color of the options zum wähle */ /*
+color: green !important; /*to change the color of the options */ /*
+}
+*/
+/*assets/style.css*/
+/*changes the boxes withe the selected values
+https://discourse.julialang.org/t/how-to-change-color-of-selected-dropdown-values-in-dash/57193/2
+*/
+/*
+.Select--multi .Select-value {
+    background-color: green;
+    border-color: #e3a700;
+    color: orange;
+}
+
+*/
+
+/*for hover menu*/
+/*
+.VirtualizedSelectFocusedOption {
+  background-color: green !important;  /* color for hover*/ /*
+  color: white;  /*color normal
+}
+*/
+
+/* input box macht wissi teil usserbalb vode box mit temperatur*/
+/*
+.Select-control {
+    background-color: #F5DEB3 !important;
+    border-color: #1E1E1E ;
+}
+*/
+/*
+
+.Select-control {
+    background-color: #F5DEB3;
+    border-radius: 4px;
+    border: 1px solid #1E1E1E;
+    color: #1E1E1E;
+    display: table;
+    border-spacing: 0;
+    border-collapse: separate;
+    height: 36px;
+    overflow: hidden;
+}
+––––––––––––––––––––––––*/
+
+/*
+/* changes the text color of input box to sggrey12*/
+/*
+.Select-value-label {
+    color: #1E1E1E !important;
+}
+*/
+/*
+.Select--single > .Select-control .Select-value, .Select-placeholder {
+    border: 1px solid grey;
+    border-radius: 4px;
+}
+––––––––––––––––––––––––––––––––––––––––––––––––––*/
+
+/* dropdown menu options hovere jetzt nüm blau über det wo ich bin */
+/*
+.VirtualizedSelectOption {
+    background-color: transparent;
+    color: #1E1E1E ;
+ }
+ ––––––––––––––––––––––––––––––––––––––––––––––––––*/
+
+/* dropdown menu hover effect */
+
+.VirtualizedSelectFocusedOption {
+    background-color: #FF8C00 !important;  /*hover bg darkorange*/
+    color: white !important; /*text color while hover*/
+    opacity: .7 !important;
+}
+––––––––––––––––––––––––––––––––––––––––––––––––––*/
+
+/* border on focus - default is blue
+ * shadow box around input box.  default is blue
+ macht igendwie au nüt
+ */
+ /*
+.is-focused:not(.is-open) > .Select-control {
+  border-color: #1E1E1E; 
+  box-shadow: none;
+}
+
+––––––––––––––––––––––––––––––––––––––––––––––––––*/
+
+
+/* this colors the input box text and x  of multi dropdown*/
+/*
+.Select--multi .Select-value {
+  color:#1E1E1E ;
+  background-color: #F5DEB3;
+}
+
+*/
+
+
+/*
+.Select-control {
+    background-color:  #FBFBF;  
+    border-color: #FBFBF #FBFBF #FBFBF;
+    border-radius: 4px;
+    border: 1px solid #FBFBF;
+    color: #333;
+    cursor: default;
+    display: table;
+    border-spacing: 0;
+    border-collapse: separate;
+    height: 36px;
+    outline: none;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.Select--multi .Select-value {
+    background-color: #FBFBF;
+    background-color: rgba(0, 126, 255, 0.08);
+    border-radius: 2px;
+    border: 1px solid #c2e0ff;
+    border: 1px solid rgba(0, 126, 255, 0.24);
+    color: #007eff;
+    display: inline-block;
+    font-size: 0.9em;
+    line-height: 1.4;
+    margin-left: 5px;
+    margin-top: 5px;
+    vertical-align: top;
+}
+––––––––––––––––––––––––––––––––––––––––––––––––––*/
+
+
+/* 
+.Select--multi .Select-value {
+    background-color: #ebf5ff;
+    background-color: rgba(0, 126, 255, 0.08);
+    border-radius: 2px;
+    border: 1px solid #c2e0ff;
+    border: 1px solid rgba(0, 126, 255, 0.24);
+    color: #007eff;
+    display: inline-block;
+    font-size: 0.9em;
+    line-height: 1.4;
+    margin-left: 5px;
+    margin-top: 5px;
+    vertical-align: top;
+}
+
+––––––––––––––––––––––––––––––––––––––––––––––––––*/
+/* 
+textarea {
+    writing-mode: horizontal-tb !important;
+    font-style: ;
+    font-variant-ligatures: ;
+    font-variant-caps: ;
+    font-variant-numeric: ;
+    font-variant-east-asian: ;
+    font-weight: ;
+    font-stretch: ;
+    font-size: ;
+    font-family: monospace;
+    text-rendering: auto;
+    color: fieldtext;
+    letter-spacing: normal;
+    word-spacing: normal;
+    line-height: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    appearance: auto;
+    -webkit-rtl-ordering: logical;
+    resize: auto;
+    cursor: text;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    background-color: field;
+    column-count: initial !important;
+    margin: 0em;
+    border-width: 1px;
+    border-style: solid;
+    border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+    border-image: initial;
+    padding: 2px;
+}
+
+
+––––––––––––––––––––––––––––––––––––––––––––––––––*/
+/* Dash Table
+––––––––––––––––––––––––––––––––––––––––––––––––––*/
+tr:hover {
+  background-color: rgb(251, 251, 252) !important;
+}
+
+
+/* reduce row height abstand der zeilen */
+
+
+.dash-table-container .dash-spreadsheet-container .dash-spreadsheet-inner tr{
+    min-height: .7rem !important;
+    height: 1.2rem !important;
+}
+
+.dash-spreadsheet td div{
+    line-height: 1.5rem !important;
+    max-height: 3rem !important;
+    min-height: 1rem !important; 
+    height: auto !important;
+    display: block !important;
+    overflow-y: hidden !important;
+}
+
+/* reduce header height */
+/*
+.dash-table-container .dash-spreadsheet-container .dash-spreadsheet-inner tr:first-of-type{
+    min-height: 5px !important;
+    height: 10px !important;
+}  */
+
+
+/* Img
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+img {
+  display:block;
+  margin-left: auto;
+  margin-right: auto;
+  vertical-align:middle;
+  border-style: none;
+}
+
+/* Typography
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+h1, h2, h3, h4, h5, h6 {
+  /*font-family: Roboto  !important;*/
+  font-family: Roboto !important;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-top: 0.1em;
+  padding-bottom: 0.1em;
+  vertical-align: central;
+  text-align: center;
+  font-weight: 400;
+  color: rgb(30,30,30);
+  }
+h1 { font-size: 3rem !important;
+     font-weight: 700 !important;
+}
+/*Infobox title*/
+h2 { font-size: 1.5rem !important;
+     font-weight: 600 !important;
+     padding-bottom: 0.2em !important;
+     margin-top: 0px !important;
+     padding-top: 0.2em !important;
+     margin-bottom: 0px !important;
+}
+
+/*aktuelle Messungen*/
+h5 { font-size: 2rem !important;
+     font-weight: 600 !important;
+
+}
+
+p {font-size: 1rem !important;
+   font-weight: 300 !important;
+     padding-bottom: 0.3em !important;
+     margin-top: 0px !important;
+     padding-top: 0.3em !important;
+     margin-bottom: 0.2em !important;
+}
+
+strong {
+    font-weight: 700 !important;
+    }
+
+
+.markdown strong {
+  font-weight: 700 !important;
+}
+
+/*–––––––––––––––––––––––––––––––––––––––––––––––––– 
+.markdown strong {
+  font-weight: bold;
+}
+*/
