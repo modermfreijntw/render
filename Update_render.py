@@ -6,6 +6,10 @@ Created on Fri Sep  9 18:32:26 2022
 """
 
 
+#timezone
+#every 30 min
+#prit interval
+
 #hovermenu dont say variabel sondern Messwert
 #kei = zeichen
 #und mit ziit 
@@ -24,11 +28,11 @@ Created on Fri Sep  9 18:32:26 2022
 #datum dort unter 12.00 striche
 
 from dash import dash, dcc, html,dash_table, Output, Input, ctx
-
+import os
 import plotly.graph_objs as go
 import pandas as pd
 import numpy as np
-import os
+
 from dash_table.Format import Format, Group, Scheme
 import dash_table.FormatTemplate as FormatTemplate
 from datetime import datetime as dt
@@ -57,8 +61,10 @@ import pytz
 
 app = dash.Dash(__name__)  #, suppress_callback_exceptions=True)
 #app = dash(__name__)
+#########################################################3
 server = app.server
 
+########################################
 
 ####################################################################################################
 # 000 - FORMATTING INFO
@@ -274,20 +280,30 @@ api_key = os.getenv('api_key')
 organizationId = os.getenv('organizationId')
 
 deviceId = os.getenv('deviceId')
-
 #How to authenticate to a rest API 
 headers = {'Accept': 'application/json', "Api-Key" : api_key}
 
 
 def get_data():
     #how to get date of yesterday with utc as timezone
-    yesterday = datetime.now(timezone.utc) - timedelta(days=5)
+    #yesterday = datetime.now(timezone.utc) - timedelta(days=5)
+    # yesterday=datetime.now(pytz.timezone('Europe/Zurich')) - timedelta(days=5)
+    # print(yesterday)
+    # #get yesterdays date iso with time zone info and no microsecs
+    # print(yesterday.replace(microsecond=0, second=0).astimezone().isoformat())
+    # yesterday=yesterday.replace(microsecond=0).replace(second=0).astimezone().isoformat()
+    # print(yesterday)
+    today=datetime.now(pytz.timezone('Europe/Zurich'))
+    print(today)
+
+    yesterday=today - timedelta(days=5)
     print(yesterday)
     #get yesterdays date iso with time zone info and no microsecs
-    print(yesterday.replace(microsecond=0, second=0).astimezone().isoformat())
+    #print(yesterday.replace(microsecond=0, second=0).astimezone().isoformat())
     yesterday=yesterday.replace(microsecond=0).replace(second=0).astimezone().isoformat()
-    
-    today=datetime.now(timezone.utc).replace(microsecond=0, second=0).astimezone().isoformat()
+    print(yesterday)
+    today=today.replace(microsecond=0).replace(second=0).astimezone().isoformat()
+    #today=datetime.now(timezone.utc).replace(microsecond=0, second=0).astimezone().isoformat()
     print(today)
     
     #format so url is readable
@@ -642,7 +658,7 @@ app.layout = html.Div(children=[
                           dcc.Interval(
                 id='my_interval',
                 disabled=False,     #if True, the counter will no longer update
-                interval=1*1000*60*60*15,    #increment the counter n_intervals every interval milliseconds
+                interval=900000*2,    #every 30 min  #increment the counter n_intervals every interval milliseconds
                 n_intervals=0,      #number of times the interval has passed
                 # max_intervals=1,    #number of times the interval will be fired.
                                     #if -1, then the interval has no limit (the default)
@@ -892,6 +908,7 @@ def get_dataupdate(n, ticker):
              # global dff
              dff=get_data()
             # get_table_dd(dff)
+             print("interval activated")
              return get_table_dd(dff), display_time_series(ticker, dff)
             # return figure 
          #(data, figure) 
@@ -995,33 +1012,7 @@ def display_time_series(ticker, dff):
                                             #, marker_color=colormap[t.name]
                                             )
                                           )  
-    # hovertemplate=
-    #     "<b>%{name}<br>" +
-    #     "Messwert: %{y}<br>" +
-    #     "Zeitpunkt: %{x}<br>" +
-    #     "Population: %{marker.size:,}" +
-    #     "<extra></extra>",
-    # fig.update_xaxes(    
-    #     #mit nur dem beuchum ich genau de default plot scho mal guet
-    # #dtick=86400000/2,  #86400000 set to 1 day so durch 2 sollte alle 12 h
-    # dtick=86400000/2,  #1 pro tag angeschrieb um 12.00  sweil period
-    # #tickformat="%H \n %d %b",   
-    # ##%b - abbreviated month name.*
-    # ##%H - hour (24-hour clock) as a decimal number [00,23].
-    # #xaxis_tickformat = '%d %B (%a)<br>%Y'  #gibt Datum Mon. (Wochentag) year
-    # #important /n und <br>
-    # ##Date axis tick labels have the special property that any portion after the first instance of '\n' in tickformat will appear on a second line only once per unique value, as with the year numbers in the example below. To have the year number appear on every tick label, '<br>' should be used instead of '\n'.
-    # ticklabelmode="period"
-    # ,
-    # ticks= "outside",
-    # tickcolor= "black", 
-    # #showticklabels = True,
-    # # minor=dict(ticks="outside", 
-    # #            ticklen=4, #sets lenght of line
-    # #            #tickformat="%H", 
-    # #             dtick=86400000/2,   #so sind 12 und 24.00 uhr eingezeichnet   # nr of milisecs in a week 7*24*60*60*1000 ,
-    # #             showgrid=True)
-    # )
+
     
 # =============minor für 12 und 00 nur dat mon================================================================
     fig.update_xaxes(
@@ -1049,22 +1040,7 @@ def display_time_series(ticker, dff):
                 showgrid=True)
     )
     
-# =============================================================================
-    
-    
-# ===============Monthly Period Labels With Weekly Minor Ticks==============================================================
-#     fig.update_xaxes(ticks= "outside",
-#                  ticklabelmode= "period", 
-#                  tickcolor= "black", 
-#                  ticklen=10, 
-#                  minor=dict(
-#                      ticklen=4,  
-#                      dtick=7*24*60*60*1000,  
-#                      tick0="2016-07-03", 
-#                      griddash='dot', 
-#                      gridcolor='white')
-#                 )
-# =============================================================================
+
     
     return fig
 
@@ -1075,4 +1051,3 @@ def display_time_series(ticker, dff):
 if __name__ == '__main__':
     app.run_server(debug=True)
      #app.run_server(debug=False)
-     
