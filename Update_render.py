@@ -300,9 +300,9 @@ def get_data():
     print(yesterday)
     #get yesterdays date iso with time zone info and no microsecs
     #print(yesterday.replace(microsecond=0, second=0).astimezone().isoformat())
-    yesterday=yesterday.replace(microsecond=0).replace(second=0).astimezone().isoformat()
+    yesterday=yesterday.replace(microsecond=0).replace(second=0).astimezone(pytz.timezone('Europe/Zurich')).isoformat()
     print(yesterday)
-    today=today.replace(microsecond=0).replace(second=0).astimezone().isoformat()
+    today=today.replace(microsecond=0).replace(second=0).astimezone(pytz.timezone('Europe/Zurich')).isoformat()
     #today=datetime.now(timezone.utc).replace(microsecond=0, second=0).astimezone().isoformat()
     print(today)
     
