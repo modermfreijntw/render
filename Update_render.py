@@ -413,7 +413,6 @@ legend2['timeWindowStart'] = ""
 # Python
 ## Extract the third row
 #df.iloc[2]
-
 def get_table_dd(dff):
     #####TABELLE DATEN ERSTELLLEN
     #returns panda series df
@@ -431,10 +430,10 @@ def get_table_dd(dff):
     #nachher index numerisch und alte index als colaber wemmer nöd deshalb
     #dd_table=dd_table.reset_index()
     dd_table=dd_table.reset_index(drop=True)
-    
+    print(dd_table)
     
     #make an index
-    idx = pd.Index(["Datum", "rel. Luftfeuchtigkeit (%)", 'Taupunkt (°C)',"Air Quality Index", "Feinstaubpartikel <2,5 µm [µg/m³]", "Feinstaubpartikel <10 µm [µg/m³]","Temperatur (°C)",'Luftdruck (MPascal = 0.1 Bar)'], name='')
+    idx = pd.Index(["Datum", "rel. Luftfeuchtigkeit (%)","Temperatur (°C)",  "Feinstaubpartikel <2,5 µm [µg/m³]", "Feinstaubpartikel <10 µm [µg/m³]",'Luftdruck (MPascal = 0.1 Bar)', 'Taupunkt (°C)',"Air Quality Index"], name='')
     #idx.rename('Messwerte') kann Namen überschreiben
     dd_table=dd_table.set_index(idx)
     #assign the index we made to the series
@@ -485,8 +484,10 @@ def get_table_dd(dff):
     ##### reindex or change the order of rows
      
     #df.reindex([8,11,9,2, 1, 0,7,5,6,4,10,3])
-    
-    dd_table=dd_table.reindex([0,6,3,1,4,5,2,7])
+    #[0,2,7,1,3,4,6,5]
+    #dd_table=dd_table.reindex([0,6,3,1,4,5,2,7])
+    dd_table=dd_table.reindex([0,2,7,1,3,4,6,5])
+    print(dd_table)
 
     return dd_table.iloc[1:,:].to_dict('records')#dd_table
 # =============================================================================
